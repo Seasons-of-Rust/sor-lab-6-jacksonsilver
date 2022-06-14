@@ -16,7 +16,7 @@ fn main() {
                 .expect("could not parse number") // Panic with a message if it fails
         })
         .collect();
-    
+
     let mut index: i32;
     let mut numbers2: Vec<i32>;
 
@@ -29,16 +29,14 @@ fn main() {
             for i in (0..numbers2.len()).step_by(4) {
                 match numbers2[i as usize] {
                     1 => {
-                        index = numbers2[(i+3) as usize];
-                        numbers2[index as usize] = numbers2
-                            [numbers2[(i + 1) as usize] as usize]
+                        index = numbers2[(i + 3) as usize];
+                        numbers2[index as usize] = numbers2[numbers2[(i + 1) as usize] as usize]
                             + numbers2[numbers2[(i + 2) as usize] as usize];
                         numbers2[i as usize] += 4;
                     }
                     2 => {
-                        index = numbers2[(i+3) as usize];
-                        numbers2[index as usize] = numbers2
-                            [numbers2[(i + 1) as usize] as usize]
+                        index = numbers2[(i + 3) as usize];
+                        numbers2[index as usize] = numbers2[numbers2[(i + 1) as usize] as usize]
                             * numbers2[numbers2[(i + 2) as usize] as usize];
                         numbers2[i as usize] += 4;
                     }
